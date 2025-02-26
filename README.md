@@ -1,1 +1,0 @@
-# Oktato_atvaltas
