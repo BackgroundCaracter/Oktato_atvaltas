@@ -1,0 +1,76 @@
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bináris számrendszer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navigacio navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="fo.html">Számrendszerek</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="binaris.html">Bináris</a></li>
+                    <li class="nav-item"><a class="nav-link" href="oktalis.html">Oktális</a></li>
+                    <li class="nav-item"><a class="nav-link" href="decimalis.html">Decimális</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hexadec.html">Hexadecimális</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="fejlec bg-primary text-white text-center py-5">
+        <h1>Bináris számrendszer</h1>
+    </header>
+    
+    <section class="tartalom container my-5">
+        <h2>Történelmi áttekintés</h2>
+        <p>A bináris számrendszer az egyik legősibb és legegyszerűbb számrendszer, amely csak két számjegyet használ: 0 és 1. Bár az emberek többsége a tízes számrendszert használja, a bináris számrendszer sokkal régebbi gyökerekkel rendelkezik.
+
+            Az ókori Kínában a Jiǔzhāng Suànshū (Kilenc fejezet a matematikáról) már alkalmazott bináris számokhoz hasonló technikákat. Az I Ching (Ji Csing) könyvében található yin és yang szimbólumok egyesek szerint egyfajta bináris rendszert képviseltek.
+            
+            A modern bináris rendszer alapjait Gottfried Wilhelm Leibniz német matematikus fektette le a 17. században. Ő rámutatott, hogy minden szám kifejezhető csupán 0 és 1 kombinációjával. Az 1850-es években George Boole tovább fejlesztette ezt az elméletet a Boole-algebra megalkotásával, amely lehetővé tette a logikai műveletek formális matematikai leírását.
+            
+            A 20. században a bináris számrendszer vált az informatika alapjává. John von Neumann és más tudósok felfedezték, hogy az elektromos áramkörök könnyedén reprezentálhatnak bináris állapotokat (pl. áram van = 1, áram nincs = 0), ami lehetővé tette az első modern számítógépek létrehozását.
+            
+            </p>
+    </section>
+    
+    <section class="atvaltas container my-5">
+        <h2>Hogyan működik?</h2>
+        <p>A bináris számrendszer csak két számjegyet használ: 0 és 1. Minden szám kettes hatványainak kombinációjaként fejezhető ki.</p>
+    </section>
+    
+    <section class="konverter container my-5">
+        <h2>Átváltó</h2>
+        <label for="decimalisSzam">Decimális szám:</label>
+        <input type="number" id="decimalisSzam" class="form-control" placeholder="Írj be egy számot">
+        <button onclick="konvertalBinarisra()" class="btn btn-primary mt-2">Átváltás</button>
+        <p>Eredmény: <span id="binarisEredmeny"></span></p>
+        <div class="video-container text-center">
+            <video controls width="80%">
+                <source src="Bináris Átváltás – A Clipchamppel készült.mp4" type="video/mp4">
+                A böngésződ nem támogatja a videó lejátszását.
+            </video>
+        </div>
+    </section>
+    
+    <footer class="lablec bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Számrendszerek</p>
+    </footer>
+    
+    <script>
+        function konvertalBinarisra() {
+            let szam = document.getElementById("decimalisSzam").value;
+            document.getElementById("binarisEredmeny").innerText = Number(szam).toString(2);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
