@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oktális számrendszer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navigacio navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="fo.html">Számrendszerek</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="binaris.html">Bináris</a></li>
+                    <li class="nav-item"><a class="nav-link" href="oktalis.html">Oktális</a></li>
+                    <li class="nav-item"><a class="nav-link" href="decimalis.html">Decimális</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hexadec.html">Hexadecimális</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="fejlec bg-primary text-white text-center py-5">
+        <h1>Oktális számrendszer</h1>
+    </header>
+    
+    <section class="tartalom container my-5">
+        <h2>Történelmi áttekintés</h2>
+        <p>Az oktális számrendszer (nyolcas számrendszer) egy 0–7 közötti számjegyeket használó rendszer. Bár napjainkban kevésbé elterjedt, régebben a számítógépek és a tengerészeti navigáció területén használták.
+
+            A nyolcas számrendszer természetes módon következik a bináris rendszerből, mivel minden három bináris számjegy egyetlen oktális számjeggyé alakítható. A számítógépek fejlődésének korai szakaszában, különösen az 1960-as és 1970-es években, az oktális számrendszer népszerű volt, mivel megkönnyítette a bináris adatok olvasását és kezelését.
+            
+            A Digital Equipment Corporation (DEC) PDP-8 nevű számítógépe például oktális számrendszert használt, mivel ez egyszerűsítette a programozást és a memória kezelését. Az oktális számrendszer alkalmazása csökkent az 1980-as években, amikor a hexadecimális számrendszer átvette a helyét a fejlettebb számítógépes rendszerekben.</p>
+    </section>
+    
+    <section class="atvaltas container my-5">
+        <h2>Hogyan működik?</h2>
+        <p>Az oktális számrendszer 0-7 közötti számjegyeket használ, és minden szám hármas csoportokba rendezett bináris számjegyekkel fejezhető ki.</p>
+    </section>
+    
+    <section class="konverter container my-5">
+        <h2>Átváltó</h2>
+        <label for="decimalisSzam">Decimális szám:</label>
+        <input type="number" id="decimalisSzam" class="form-control" placeholder="Írj be egy számot">
+        <button onclick="konvertalOktalisra()" class="btn btn-primary mt-2">Átváltás</button>
+        <p>Eredmény: <span id="oktalisEredmeny"></span></p>
+    </section>
+    
+    <footer class="lablec bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Számrendszerek</p>
+    </footer>
+    
+    <script>
+        function konvertalOktalisra() {
+            let szam = document.getElementById("decimalisSzam").value;
+            document.getElementById("oktalisEredmeny").innerText = Number(szam).toString(8);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
