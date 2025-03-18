@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimális számrendszer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navigacio navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="fo.html">Számrendszerek</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="binaris.html">Bináris</a></li>
+                    <li class="nav-item"><a class="nav-link" href="oktalis.html">Oktális</a></li>
+                    <li class="nav-item"><a class="nav-link" href="decimalis.html">Decimális</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hexadec.html">Hexadecimális</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="fejlec bg-primary text-white text-center py-5">
+        <h1>Decimális számrendszer</h1>
+    </header>
+    
+    <section class="tartalom container my-5">
+        <h2>Történelmi áttekintés</h2>
+        <p>A decimális számrendszer (tízes számrendszer) az egyik legősibb és legelterjedtebb számrendszer a világon. Az emberi társadalmak fejlődése során szinte minden kultúra ezt a rendszert alkalmazta.
+
+            A decimális számrendszer használata vélhetően abból ered, hogy az emberek tíz ujjukkal számoltak. Az ókori Egyiptomban, Mezopotámiában és Kínában is a tízes számrendszert használták a kereskedelemben, a mérésben és az adószámításokban.
+            
+            A római számrendszer szintén a tízes számrendszeren alapult, habár nem pozícionális rendszer volt (pl. X = 10, L = 50). A ma használatos arab számrendszert, amelyet az indiai matematikusok fejlesztettek ki a 6. században, az arab tudósok hozták be Európába a középkor folyamán. Al-Khwarizmi, egy perzsa matematikus, jelentős szerepet játszott a modern számírás és a tízes alapú matematikai műveletek elterjesztésében.
+            
+            A decimális rendszer az ipari forradalommal együtt vált a tudomány, a mérnöki tudományok és a pénzügyi rendszerek legfontosabb alapjává, és máig az egyik legszélesebb körben alkalmazott számrendszer.
+            
+            </p>
+    </section>
+    
+    <section class="atvaltas container my-5">
+        <h2>Hogyan működik?</h2>
+        <p>A decimális számrendszer 10 számjegyet használ (0-9), és minden szám helyi értékét tízes hatványai határozzák meg.</p>
+    </section>
+    
+    <section class="konverter container my-5">
+        <h2>Átváltó</h2>
+        <label for="binarisSzam">Bináris szám:</label>
+        <input type="text" id="binarisSzam" class="form-control" placeholder="Írj be egy bináris számot">
+        <button onclick="konvertalDecimálisra()" class="btn btn-primary mt-2">Átváltás</button>
+        <p>Eredmény: <span id="decimalisEredmeny"></span></p>
+    </section>
+    
+    <footer class="lablec bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Számrendszerek</p>
+    </footer>
+    
+    <script>
+        function konvertalDecimálisra() {
+            let szam = document.getElementById("binarisSzam").value;
+            document.getElementById("decimalisEredmeny").innerText = parseInt(szam, 2);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
