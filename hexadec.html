@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexadecimális számrendszer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navigacio navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="fo.html">Számrendszerek</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="binaris.html">Bináris</a></li>
+                    <li class="nav-item"><a class="nav-link" href="oktalis.html">Oktális</a></li>
+                    <li class="nav-item"><a class="nav-link" href="decimalis.html">Decimális</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hexadec.html">Hexadecimális</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="fejlec bg-primary text-white text-center py-5">
+        <h1>Hexadecimális számrendszer</h1>
+    </header>
+    
+    <section class="tartalom container my-5">
+        <h2>Történelmi áttekintés</h2>
+        <p>A hexadecimális számrendszer (tizenhatos számrendszer) a modern informatika egyik kulcsfontosságú rendszere. Ebben a számrendszerben 0-9 és A-F számjegyeket használnak, ahol A=10, B=11, C=12, D=13, E=14, F=15.
+
+            A hexadecimális számrendszer a számítógépek fejlődésével vált fontossá, mivel könnyebbé teszi a bináris adatok kezelését. Mivel minden négy bináris bit egy hexadecimális számjegynek felel meg, a hosszú bináris kódokat sokkal rövidebb és áttekinthetőbb formában lehet megjeleníteni.
+            
+            Az 1960-as években, amikor az IBM kifejlesztette a System/360 számítógéprendszert, a hexadecimális rendszer vált az egyik leggyakrabban használt formátummá a memóriacímzésben és gépi kódokban. A hexadecimális kódolás különösen elterjedt a programozásban, például az ASCII kódrendszerben és a színkódok meghatározásában (pl. #FF5733 egy színkód HTML és CSS esetében).
+            
+            Ma a hexadecimális rendszer nélkülözhetetlen a számítógépes rendszerekben, a hálózati címekben (pl. MAC-címek) és az adattárolásban is.
+            
+            </p>
+    </section>
+    
+    <section class="atvaltas container my-5">
+        <h2>Hogyan működik?</h2>
+        <p>A hexadecimális számrendszer 16 számjegyet használ: 0-9 és A-F, ahol az A=10, B=11, C=12, D=13, E=14, F=15.</p>
+    </section>
+    
+    <section class="konverter container my-5">
+        <h2>Átváltó</h2>
+        <label for="decimalisSzam">Decimális szám:</label>
+        <input type="number" id="decimalisSzam" class="form-control" placeholder="Írj be egy számot">
+        <button onclick="konvertalHexadecimalisra()" class="btn btn-primary mt-2">Átváltás</button>
+        <p>Eredmény: <span id="hexadecEredmeny"></span></p>
+    </section>
+    
+    <footer class="lablec bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Számrendszerek</p>
+    </footer>
+    
+    <script>
+        function konvertalHexadecimalisra() {
+            let szam = document.getElementById("decimalisSzam").value;
+            document.getElementById("hexadecEredmeny").innerText = Number(szam).toString(16).toUpperCase();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
