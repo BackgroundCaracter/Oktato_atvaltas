@@ -54,6 +54,13 @@
         <input type="text" id="binarisSzam" class="form-control" placeholder="Írj be egy bináris számot">
         <button onclick="konvertalDecimálisra()" class="btn btn-primary mt-2">Átváltás</button>
         <p>Eredmény: <span id="decimalisEredmeny"></span></p>
+
+        <h2>Kérdőív</h2>
+        <form id="quizForm">
+            <div id="quiz"></div>
+            <button type="button" class="btn btn-primary mt-3" onclick="checkAnswers()">Eredmény</button>
+            <p id="result" class="mt-3"></p>
+        </form>
     </section>
     
     <footer class="lablec bg-dark text-white text-center py-3">
@@ -66,6 +73,45 @@
             document.getElementById("decimalisEredmeny").innerText = parseInt(szam, 2);
         }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const questions = [
+            { q: "Melyik számrendszer alapja a 10?", a: "decimális", options: ["bináris", "oktális", "decimális", "hexadecimális"] },
+            { q: "Hány számjegyet használ a decimális számrendszer?", a: "10", options: ["2", "8", "10", "16"] },
+            { q: "Melyik szám NEM része a decimális számrendszernek?", a: "A", options: ["0", "5", "9", "A"] },
+            { q: "Melyik kultúrához köthető a modern decimális számrendszer?", a: "indiai", options: ["egyiptomi", "babilóniai", "indiai", "görög"] },
+            { q: "Mi a legkisebb számjegy a decimális rendszerben?", a: "0", options: ["1", "0", "-1", "2"] },
+            { q: "Melyik számrendszerre váltunk leggyakrabban a decimálisból a számítástechnikában?", a: "mindegyik", options: ["bináris", "oktális", "hexadecimális", "mindegyik"] },
+            { q: "Melyik decimális szám egyenlő 101 bináris számmal?", a: "5", options: ["4", "5", "6", "7"] },
+            { q: "Mi a 25 decimális szám bináris megfelelője?", a: "11001", options: ["11000", "10011", "11001", "10110"] },
+            { q: "Hogyan ábrázolják a tizedes törteket a decimális rendszerben?", a: "vesszővel vagy ponttal", options: ["vesszővel vagy ponttal", "külön szimbólummal", "kizárólag egész számként", "szorzással és hatványozással"] },
+            { q: "Milyen típusú számokat használunk a modern pénzügyi számításokhoz?", a: "decimális", options: ["bináris", "oktális", "decimális", "hexadecimális"] }
+        ];
+        function loadQuiz() {
+            const quizDiv = document.getElementById("quiz");
+            quizDiv.innerHTML = "";
+            questions.forEach((item, index) => {
+                let questionHTML = `<p>${index + 1}. ${item.q}</p>`;
+                item.options.forEach(option => {
+                    questionHTML += `<input type='radio' name='q${index}' value='${option}'> ${option}<br>`;
+                });
+                quizDiv.innerHTML += questionHTML;
+            });
+        }
+
+        function checkAnswers() {
+            let score = 0;
+            questions.forEach((item, index) => {
+                const selected = document.querySelector(`input[name='q${index}']:checked`);
+                if (selected && selected.value === item.a) {
+                    score++;
+                }
+            });
+            document.getElementById("result").innerText = `Eredmény: ${score}/10`;
+        }
+
+        
+        loadQuiz();
+    </script>
 </body>
 </html>
